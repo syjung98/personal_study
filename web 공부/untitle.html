@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>menu setting</title>
+<style> body{ background-color:linen;}</style>
+  <style>
+  *{margin:0; padding:0;}
+  li{list-style:none;}
+  .wrapper{width:1170px; margin:0 auto;}
+  .clearfix{content:''; display:block; clear:both;}
+  header{height:130px; background-color:#A9F5E1; border: 1px solid #253342;
+         position:fixed; width:100%; z-index:9999; top:0; left:0;}
+  h1{color:white; line-height: 75px; float:left;}
+  .menu{float:right;}
+  .menu li{float:left;}
+  .menu a{line-height: 75px; color:white; padding: 0 20px; display:block;}
+
+  .sub {display:none;}
+  li:hover .sub {display:block; position:absolute;}
+  .footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    color:black ;
+  }
+  .leftcolumn{
+    float:left;
+    width:50%;
+    padding:10px;
+  }
+  .rightcolumn{
+    float:left;
+    width:50%;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <div class='wrapper'>
+      <h1>Project Name</h1>
+      <nav>
+        <ul class='menu'>
+          <li><a href='#'>menu1</a>
+          <ul class='sub'>
+            <li><a href='http://reborn1998.dothome.co.kr/java%20project1.html' style='color:red'>Java Project1</a></li>
+            <li><a href='#'>Java Project2</a></li>
+            <li><a href='#'>Java Project3</a></li>
+            </ul>
+          </li>
+
+          <li><a href=''>menu2</a></li>
+          <li><a href=''>menu3</a></li>
+          <li><a href=''>menu4</a></li>
+          <li><a href=''>menu5</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+    <div class='footer'>
+      <h2>sunyong project</h2>
+      <ul>
+        <li><a href="http://reborn1998.dothome.co.kr/self%20introduce.html">자기소개</a><li>
+        <li><a href="tel:010-4726-0674">문의하기</a><li>
+      </div>
+        <div class='leftcolumn'>
+          <h2>left side</h2>
+        </div>
+        <div class='rightcolumn'>
+          <h2>right side</h2>
+        </div>
+  </body>
+</html>
