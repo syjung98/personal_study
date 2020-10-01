@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>추첨 프로그램</title>
+    <style>
+      body{ background-color:linen;}
+      li{list-style:none;}
+      header{height:150px; background-color:#A9F5E1; border: 1px solid #253342;
+              position:fixed;width:100%; z-index:9999; top:0; left:0;}
+      h1{color:white; line-height: 75px; float:left;}
+      h3{color:white; line-height: 75px; text-align:center;}
+      h2{text_align:center;positive:relative; left:400px;top:400px; }
+      #countdown{
+          display:inline;
+      }
+    </style>
+    <script>
+        CountDownTimer('12/25/2020', 'countdown');
+
+function CountDownTimer(dt, id) {
+   var end = new Date(dt);
+   var _second = 1000;
+   var _minute = _second * 60;
+   var _hour = _minute * 60;
+   var _day = _hour * 24;
+   var timer;
+   function showRemaining() {
+       var now = new Date();
+       var distance = end - now;
+       var days = Math.floor(distance / _day);
+       var hours = Math.floor((distance % _day) / _hour);
+       var minutes = Math.floor((distance % _hour) / _minute);
+       var seconds = Math.floor((distance % _minute) / _second);
+       if(minutes % 2 == 0)
+               document.body.style.backgroundColor = "violet";
+           else
+               document.body.style.backgroundColor = "lightskyblue";
+
+       document.getElementById(id).innerHTML = days + '일 ';
+       document.getElementById(id).innerHTML += hours + '시간 ';
+       document.getElementById(id).innerHTML += minutes + '분 ';
+       document.getElementById(id).innerHTML += seconds + '초';
+
+   }
+
+   timer = setInterval(showRemaining, 1000);
+
+}
+</script>
+    </head>>
+    <body>
+        <header>
+            <h3 text-align:center;>
+                HW-4 Java Script 크리스마스 타이머
+            </h3> 
+
+        </header>
+
+                <h2 text_align:center; >
+                    <br><br><br>
+                    크리스마스까지 <div id="countdown"></div> 남았습니다.<br>  
+                </h2>
+        
+    </body>
