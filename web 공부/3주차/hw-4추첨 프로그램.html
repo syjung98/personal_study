@@ -11,56 +11,47 @@
               position:fixed;width:100%; z-index:9999; top:0; left:0;}
       h1{color:white; line-height: 75px; float:left;}
       h3{color:white; line-height: 75px; text-align:center;}
-      h2{text_align:center;positive:relative; left:400px;top:400px; }
-      #countdown{
-          display:inline;
-      }
     </style>
-    <script>
-        CountDownTimer('12/25/2020', 'countdown');
-
-function CountDownTimer(dt, id) {
-   var end = new Date(dt);
-   var _second = 1000;
-   var _minute = _second * 60;
-   var _hour = _minute * 60;
-   var _day = _hour * 24;
-   var timer;
-   function showRemaining() {
-       var now = new Date();
-       var distance = end - now;
-       var days = Math.floor(distance / _day);
-       var hours = Math.floor((distance % _day) / _hour);
-       var minutes = Math.floor((distance % _hour) / _minute);
-       var seconds = Math.floor((distance % _minute) / _second);
-       if(minutes % 2 == 0)
-               document.body.style.backgroundColor = "violet";
-           else
-               document.body.style.backgroundColor = "lightskyblue";
-
-       document.getElementById(id).innerHTML = days + '일 ';
-       document.getElementById(id).innerHTML += hours + '시간 ';
-       document.getElementById(id).innerHTML += minutes + '분 ';
-       document.getElementById(id).innerHTML += seconds + '초';
-
-   }
-
-   timer = setInterval(showRemaining, 1000);
-
-}
-</script>
+    
     </head>>
     <body>
         <header>
             <h3 text-align:center;>
-                HW-4 Java Script 크리스마스 타이머
+                HW-4 Java Script 추첨 프로그램
             </h3> 
 
         </header>
+        <script>
+            var member=['예슬','현정','세인','휘정','서연','민주','선용'];
+            var result=[];
+            var a=prompt('몇명을 추첨할까요?','');
+            a=parseInt(a);
+    
+    function random(arr,n) {
+        for(var i=1;i<100;i++){
+            var randomnum=Math.floor(Math.random()*arr.length);
+            if (result.indexOf(arr[randomnum])==-1){
+                result.push(arr[randomnum]);
+                if(result.length==n){
+                    break;
+                }
+            }
+        }
 
-                <h2 text_align:center; >
-                    <br><br><br>
-                    크리스마스까지 <div id="countdown"></div> 남았습니다.<br>  
-                </h2>
         
+    
+       }
+       random(member,a)
+       document.write('<br><br><br><br><br><br><br>')
+            document.write('당첨자:');
+            for(var b=0;b<a;b++){
+                if (b==a-1){
+                    document.write("<strong>"+result[b]+'</strong>');}
+                    else{document.write("<strong>"+result[b]+"</strong>"+',');}
+                
+            }
+            
+    </script>
+
+                
     </body>
