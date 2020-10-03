@@ -11,6 +11,13 @@
               position:fixed;width:100%; z-index:9999; top:0; left:0;}
       h1{color:white; line-height: 75px; float:left;}
       h3{color:white; line-height: 75px; text-align:center;}
+      #set_member{
+    margin: 200px auto;
+    text-align: center;
+    width: 600px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 1px solid black;
 
     </style>
     
@@ -22,35 +29,40 @@
             </h3> 
 
         </header>
+        <div id='set_member'>
+            <h2>추첨 프로그램</h2>
+            <p>추첨 인원들을 ,와 함께 입력하세요</p>
+            <form>
+                <p>추첨명단 : <input type="text" id="member" size="5"> <input type="button" id="btn" value="입력"
+                        onclick="set()"><input type="button" id="btn" value="추첨"
+                        onclick="display()"></p>          
+            </form>
+            <div id='dis'></div>
+        
+        </div>
         <script>
-            var member=['예슬','현정','세인','휘정','서연','민주','선용'];
+            
             var result=[];
             var a=prompt('몇명을 추첨할까요?','');
             a=parseInt(a);
-    
-    function random(arr,n) {
-        for(var i=1;i<100;i++){
-            var randomnum=Math.floor(Math.random()*arr.length);
-            if (result.indexOf(arr[randomnum])==-1){
-                result.push(arr[randomnum]);
-                if(result.length==n){
-                    break;
-                }
+            function set(){
+                x = document.getElementById("member").value;
+                member=x.split(',');
+                for(var i=1;i<100;i++){
+                    var randomnum=Math.floor(Math.random()*member.length);
+                    if (result.indexOf(member[randomnum])==-1){
+                        result.push(member[randomnum]);
+                    if(result.length==a){
+                        break;}
+                    }
+                    }
+                    }
+            function display(){
+                var dis=document.getElementById("dis");
+                dis.innerHTML='당첨자:'+ result;
             }
-        }
 
-        
-    
-       }
-       random(member,a)
-       document.write('<br><br><br><br><br><br><br>')
-            document.write('당첨자:');
-            for(var b=0;b<a;b++){
-                if (b==a-1){
-                    document.write("<strong>"+result[b]+'</strong>');}
-                    else{document.write("<strong>"+result[b]+"</strong>"+',');}
-                
-            }
+
             
     </script>
 
