@@ -15,6 +15,11 @@
       #countdown{
           display:inline;
       }
+      #time_display{
+    margin: 200px auto;
+    text-align: center;
+
+}
     </style>
     <script>
         CountDownTimer('12/25/2020', 'countdown');
@@ -29,6 +34,7 @@ function CountDownTimer(dt, id) {
    function showRemaining() {
        var now = new Date();
        var distance = end - now;
+       <!--Math.floor는 값보다 크지않은 정수 반환하는 함수-->
        var days = Math.floor(distance / _day);
        var hours = Math.floor((distance % _day) / _hour);
        var minutes = Math.floor((distance % _hour) / _minute);
@@ -57,10 +63,11 @@ function CountDownTimer(dt, id) {
             </h3> 
 
         </header>
-
-                <h2>
+                <div id='time_display'>
+                <h2 text_align:center; >
                     <br><br><br>
                     크리스마스까지 <div id="countdown"></div> 남았습니다.<br>  
                 </h2>
+                </div>
         
     </body>
